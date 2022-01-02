@@ -1,0 +1,33 @@
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>October CMS - {{ this.page.title }}</title>
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="title" content="{{ this.page.meta_title }}">
+    <meta name="author" content="Ivan Gorokhov">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="OctoberCMS">
+    <link rel="icon" type="image/png" href="{{ 'assets/images/october.png' | theme }}">
+    <link href="{{ 'assets/css/pico.min.css' | theme }}" rel="stylesheet">
+    {% styles %}
+</head>
+<body class="{{ 'page-'~this.page.id }}">
+{% partial 'site/header' %}
+
+{% page %}
+
+{% partial 'site/footer' %}
+
+<!-- Scripts -->
+
+<!-- Minimal theme switcher -->
+<script src="{{ 'assets/vendor/jquery.js' | theme }}"></script>
+<script src="{{ 'assets/js/minimal-theme-switcher.js' | theme }}"></script>
+
+{% framework extras %}
+{% scripts %}
+</body>
+</html>

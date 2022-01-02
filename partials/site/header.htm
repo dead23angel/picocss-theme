@@ -1,0 +1,31 @@
+==
+<?
+function onStart()
+{
+    $this['backendUrl'] = System::checkDebugMode() ? Backend::url('/') : null;
+}
+?>
+==
+<!-- Nav -->
+<nav class="container-fluid">
+    <ul>
+        <li>
+            <a href="{{ 'home' | page }}" class="contrast"><strong>Home</strong></a>
+        </li>
+        <li>
+            <a href="{{ 'company' | page }}" class="contrast">Company</a>
+        </li>
+        <li>
+            <a href="{{ 'sign-in' | page }}" class="contrast">Sign In</a>
+        </li>
+        {% if backendUrl %}
+        <li><a href="{{ backendUrl }}" class="contrast" target="backend">Backend Area</a></li>
+        {% endif %}
+    </ul>
+    <ul>
+        <li><a href="#" class="contrast" data-theme-switcher="auto">Auto</a></li>
+        <li><a href="#" class="contrast" data-theme-switcher="light">Light</a></li>
+        <li><a href="#" class="contrast" data-theme-switcher="dark">Dark</a></li>
+    </ul>
+</nav>
+<!-- ./ Nav -->

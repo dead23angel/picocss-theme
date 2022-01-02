@@ -1,0 +1,45 @@
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>October CMS - {{ this.page.title }}</title>
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="title" content="{{ this.page.meta_title }}">
+    <meta name="author" content="Ivan Gorokhov">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="OctoberCMS">
+    <link rel="icon" type="image/png" href="{{ 'assets/images/october.png' | theme }}">
+    <link href="{{ 'assets/css/pico.min.css' | theme }}" rel="stylesheet">
+    {% styles %}
+</head>
+<body class="{{ 'page-'~this.page.id }}">
+<!-- Hero -->
+<div class="hero" data-theme="dark">
+    {% partial 'site/header' %}
+
+    <header class="container">
+        <hgroup>
+            <h1>Company</h1>
+            <h2>A classic company or blog layout with a sidebar</h2>
+        </hgroup>
+        <p><a href="#" role="button" onclick="event.preventDefault()">Call to action</a></p>
+    </header>
+</div>
+<!-- ./ Hero -->
+
+{% page %}
+
+{% partial 'site/footer' %}
+
+<!-- Scripts -->
+
+<!-- Minimal theme switcher -->
+<script src="{{ 'assets/vendor/jquery.js' | theme }}"></script>
+<script src="{{ 'assets/js/minimal-theme-switcher.js' | theme }}"></script>
+
+{% framework extras %}
+{% scripts %}
+</body>
+</html>
